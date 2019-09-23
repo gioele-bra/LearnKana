@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -25,7 +26,9 @@ public class Main extends Application {
         scene = new Scene(root, 750, 500);
         primaryStage.setTitle("Learn Kana");
        initialize();
+       scene.getStylesheets().addAll(this.getClass().getResource("/scene.css").toExternalForm());
         primaryStage.setScene(scene);
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/LearnKana.png")));
         primaryStage.show();
         fillHiragana();
         fillRomaji();
